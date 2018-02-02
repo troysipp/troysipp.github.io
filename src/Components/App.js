@@ -21,7 +21,8 @@ class App extends Component {
         </header>
         <div className="body">
           <nav>
-            <Link to="/about">Want to know more about me?</Link>
+            {/* <p>Want to know...</p> */}
+            <Link to="/about">More about me</Link>
             <Link to="/projects">What I've been up to lately</Link>
           </nav>
           <div className="main">

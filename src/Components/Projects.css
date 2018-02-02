@@ -1,3 +1,22 @@
 .project-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.project {
+  padding: 30px;
+  background-color: #a4a4bf;
+  margin-top: 50px;
+  margin-left: 15px;
+  margin-right: 15px;
+  min-width: 200px;
+}
+
+.project:hover {
+  background-color: #a4b4bf;
+}
+
+.project-list a {
   font-family: "Montserrat" sans-serif;
+  font-weight: 100;
 }
