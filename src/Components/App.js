@@ -35,7 +35,15 @@ class App extends Component {
           <img src={me} className="me-pic" />
         </div>
         <footer>
-          <p>This is the footer</p>
+          <a
+            className="footer-link"
+            href="https://www.linkedin.com/in/troy-sipprelle-516b1491/"
+          >
+            LinkedIn
+          </a>
+          <a className="footer-link" href="https://github.com/troysipp">
+            GitHub
+          </a>
         </footer>
       </div>
     );

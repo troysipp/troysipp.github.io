@@ -63,3 +63,8 @@ p {
 footer {
   background-color: #404f24;
 }
+
+.footer-link {
+  color: #2c5d63;
+  padding: 15px;
+}
