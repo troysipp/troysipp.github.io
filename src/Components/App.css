@@ -1,7 +1,88 @@
+/* html {
+  background-image: url("../IMG_0345.jpg");
+  /* -webkit-background-size: center overflow no-repeat; */
+/* -o-background-size: cover; */
+/* background-size: cover no-repeat; */
+/* max-width: 1000px; */
+/* -webkit-transform: rotate(0.5deg); */
+/* } */
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+header {
+  background-color: #669d3c;
+}
+
+a .App-header:hover {
+  color: pink;
+}
+
+a {
+  color: #2c5d63;
+  margin: 20px;
+  text-decoration: none;
+  font-family: Montserrat;
+  font-weight: 2000;
+}
+
+a:hover {
+  color: #493829;
+}
+
+/* .App-header {
+  background-color: #2c5d63;
+  padding: 0;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: baseline;
+} */
+
+/* nav {
+  padding-left-right: 40px;
+} */
+
+.body {
+  /* background-color: #83929f; */
+
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.main {
+  /* background-image: url("../Images/IMG_0345.jpg"); */
+  background-size: cover;
+  min-width: 700px;
+  min-height: 750px;
+  /* min-height: 600px; */
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  min-width: 175px;
+}
+
+.me-pic {
+  /* background-image: url("../Images/me.jpeg"); */
+  /* background-size: cover; */
+  /* min-width: 300px; */
+  overflow: hidden;
+  /* max-width: 500px; */
+  max-height: 750px;
+  min-width: 500px;
+}
+
+footer {
+  background-color: #404f24;
+}
 /* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;

@@ -3,12 +3,12 @@ import React, { Component } from "react";
 class Projects extends Component {
   render() {
     return (
-      <ul className="project-list">
-        <li className="project">Tower of Hanoi</li>
-        <li className="project">recipeat</li>
-        <li className="project">Home Finder</li>
-        <li className="project">Just for Friends</li>
-      </ul>
+      <div className="project-list">
+        <p className="project">Tower of Hanoi</p>
+        <p className="project">recipeat</p>
+        <p className="project">Home Finder</p>
+        <p className="project">Just for Friends</p>
+      </div>
     );
   }
 }
