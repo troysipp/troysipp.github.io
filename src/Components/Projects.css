@@ -1,9 +1,10 @@
 .project-list {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-around;
 }
 
-.project {
+/* .project {
   padding: 30px;
   background-color: #a4a4bf;
   margin-top: 50px;
@@ -12,11 +13,30 @@
   min-width: 200px;
 }
 
-.project:hover {
+.project a:hover {
   background-color: #a4b4bf;
 }
 
 .project-list a {
   font-family: "Montserrat" sans-serif;
   font-weight: 100;
+} */
+
+.project-list div {
+  margin: 40px;
+  min-width: 200px;
+  padding: 10px;
+  min-width: 200px;
+}
+
+.project a {
+  background-color: #a4a4bf;
+  min-width: 200px;
+  padding: 30px;
+  margin-top: 100px;
+  font-family: "Montserrat" sans-serif;
+}
+
+.project a:hover {
+  background-color: #a4b4bf;
 }
