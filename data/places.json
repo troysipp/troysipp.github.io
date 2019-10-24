@@ -1,0 +1,104 @@
+{
+  "places": {
+    "us": {
+      "name": "United States of America",
+      "code": "us",
+      "issues": {
+        "elbow-room": {
+          "value": "In 1995, the United States of America had 28 people/km^2.\r\n  In 2018, that number was 36 people/km^2 and is projected to be 35 people/km^2 in 2025.",
+          "confidence": "unknown",
+          "source": ""
+        },
+        "tree-line": {
+          "value": "Warming will cause an upward trend in tree lines and associated fauna in Hawaii and other high-elevation islands",
+          "confidence": "Low",
+          "source": "Jump, A.S., J. Hunt, and J. Peñuelas, 26: Rapid climate change-related growth decline at the southern range-edge of Fagus sylvatica. Global Change Biology, 12(11), 2163-2174.",
+          "url": "http://doi.org/1.1111/j.1365-2486.26.125.x",
+          "climate": "Minor"
+        },
+        "salmon": {
+          "value": "Ocean warming will challenge the migration patterns and survival of salmon in the northeast Pacific",
+          "confidence": "High",
+          "source": "Eliason, E.J., T.D. Clark, M.J. Hague, L.M. Hanson, Z.S. Gallagher, K.M. Jeffries, M.K. Gale, D.A. Patterson, S.G. Hinch, and A.P. Farrell, 211: Differences in thermal tolerance among sockeye salmon populations. Science, 332(625), 19-112.",
+          "url": "http://doi.org/1.1126/science.1199158"
+        },
+        "consistent-coastline": {
+          "value": "Permafrost degredation, ocean warming, and changes in sea ice will increase coastal erosion",
+          "confidence": "High",
+          "source": "Forbes, D.L. (ed.), 211: State of the Arctic Coast 21 – Scientific Review and Outlook. International Arctic Science Committee (IASC), Land-Ocean Interactions in the Coastal Zone (LOICZ), Arctic Monitoring and Assessment Programme (AMAP), International Permafrost Association (IPA), Helmholtz-Zentrum, Geesthacht, Germany, 168 pp.",
+          "url": "http://library.arcticportal.org/1277/1/state_of_the_arctic_coast_21.pdf"
+        },
+        "na-glaciers": {
+          "value": "Warming will shrink the glaciers",
+          "confidence": "High",
+          "source": "Gardner, A.S., G. Moholdt, J.G. Cogley, A.A. Arendt, B. Wouters, J. Wahr, W.T. Pfeffer, G. Kaser, S.R.M. Ligtenberg, T. Bolch, R. Hock, E. Berthier, M.J. Sharp, J.O. Hagen, M. van den Broeke, F. Paul, and V. Radic, 213: A reconciled estimate of glacier contributions to sea level rise: 23 to 29. Science, 34(6134), 852-857.",
+          "url": "http://doi.org/1.1126/science.1234532",
+          "climate": "Major"
+        },
+        "na-fire": {
+          "value": "Warming, changing precipitation, and changes due to land use and fire management will increase in wildfire activity, fire frequency and duration, and burnt area in forests out West",
+          "confidence": "High",
+          "source": "Gillett, N.P., A.J. Weaver, F.W. Zwiers, and M.D. Flannigan, 24: Detecting the effect of climate change on Canadian forest fires. Geophysical Research Letters, 31(18), L18211, doi:1.129/24GL2876.",
+          "url": "http://doi.org/1.129/24GL2876",
+          "climate": "Minor"
+        }
+      }
+    },
+    "ca": {
+      "name": "Canada",
+      "code": "ca",
+      "issues": {
+        "elbow-room": {
+          "value": "In 1995, Canada had 3 people/km^2.\r\n  In 2018, that number was 4 people/km^2 and is projected to be 4 people/km^2 in 2025.",
+          "confidence": "unknown",
+          "source": ""
+        },
+        "indigenous-people": {
+          "value": "A warming climate, a change in snow cover and in sea ice, and evolving economic and sociopolitics will challenge the livelihoods of Arctic indigeous peoples.",
+          "confidence": "Some",
+          "source": "Ford, J.D., W.A. Gough, G.J. Laidler, J. MacDonald, C. Irngaut, and K. Qrunnut, 29: Sea ice, climate change, and community vulnerability in northern Foxe Basin, Canada. Climate Research, 38, 137-154.",
+          "url": "http://doi.org/1.3354/cr777"
+        },
+        "salmon": {
+          "value": "Ocean warming will challenge the migration patterns and survival of salmon in the northeast Pacific",
+          "confidence": "High",
+          "source": "Eliason, E.J., T.D. Clark, M.J. Hague, L.M. Hanson, Z.S. Gallagher, K.M. Jeffries, M.K. Gale, D.A. Patterson, S.G. Hinch, and A.P. Farrell, 211: Differences in thermal tolerance among sockeye salmon populations. Science, 332(625), 19-112.",
+          "url": "http://doi.org/1.1126/science.1199158"
+        },
+        "consistent-coastline": {
+          "value": "Permafrost degredation, ocean warming, and changes in sea ice will increase coastal erosion",
+          "confidence": "High",
+          "source": "Forbes, D.L. (ed.), 211: State of the Arctic Coast 21 – Scientific Review and Outlook. International Arctic Science Committee (IASC), Land-Ocean Interactions in the Coastal Zone (LOICZ), Arctic Monitoring and Assessment Programme (AMAP), International Permafrost Association (IPA), Helmholtz-Zentrum, Geesthacht, Germany, 168 pp.",
+          "url": "http://library.arcticportal.org/1277/1/state_of_the_arctic_coast_21.pdf"
+        },
+        "na-glaciers": {
+          "value": "Warming will shrink the glaciers",
+          "confidence": "High",
+          "source": "Gardner, A.S., G. Moholdt, J.G. Cogley, A.A. Arendt, B. Wouters, J. Wahr, W.T. Pfeffer, G. Kaser, S.R.M. Ligtenberg, T. Bolch, R. Hock, E. Berthier, M.J. Sharp, J.O. Hagen, M. van den Broeke, F. Paul, and V. Radic, 213: A reconciled estimate of glacier contributions to sea level rise: 23 to 29. Science, 34(6134), 852-857.",
+          "url": "http://doi.org/1.1126/science.1234532",
+          "climate": "Major"
+        },
+        "na-fire": {
+          "value": "Warming, changing precipitation, and changes due to land use and fire management will increase in wildfire activity, fire frequency and duration, and burnt area in boreal forests",
+          "confidence": "High",
+          "source": "Gillett, N.P., A.J. Weaver, F.W. Zwiers, and M.D. Flannigan, 24: Detecting the effect of climate change on Canadian forest fires. Geophysical Research Letters, 31(18), L18211, doi:1.129/24GL2876.",
+          "url": "http://doi.org/1.129/24GL2876",
+          "climate": "Minor"
+        }
+      }
+    },
+    "mx": {
+      "name": "Mexico",
+      "code": "mx",
+      "issues": {
+        "colorful-ocean": {
+          "value": "Ocean warming, pollution, and physical disturbance will increase coral bleaching",
+          "confidence": "High",
+          "source": "Guzman, H.M., S. Benfield, O. Breedy, and J.M. Mair, 28: Broadening reef protection across the Marine Conservation Corridor of the Eastern Tropical Pacific: distribution and diversity of reefs in Las Perlas Archipelago, Panama. Environmental Conservation, 35(1), 46-54.",
+          "url": "http://doi.org/1.117/S376892984542",
+          "climate": "Major"
+        }
+      }
+    }
+  }
+}

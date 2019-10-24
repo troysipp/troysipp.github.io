@@ -1,0 +1,28 @@
+{
+  "issues": {
+    "elbow-room": {
+      "issue": "Elbow room"
+    },
+    "indigenous-people": {
+      "issue": "Indigeous People"
+    },
+    "tree-line": {
+      "issue": "Views from mountaintops"
+    },
+    "salmon": {
+      "issue": "Eating tasty salmon"
+    },
+    "consistent-coastline": {
+      "issue": "Ocean front property"
+    },
+    "na-glaciers": {
+      "issue": "North American glaciers"
+    },
+    "na-fire": {
+      "issue": "Things not lighting on fire"
+    },
+    "colorful-ocean": {
+      "issue": "The view underwater"
+    }
+  }
+}

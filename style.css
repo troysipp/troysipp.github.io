@@ -1,0 +1,29 @@
+#mapid {
+  height: 500px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* not sure why this isn't having an effect */
+.upper-space {
+  margin-top: 5% !important;
+}
+
+.dropdown-list {
+  margin-bottom: 2.5%;
+}
+
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.this-will-not-be-read {
+  display: none !important;
+}
+
+.selectable {
+  cursor: pointer;
+}

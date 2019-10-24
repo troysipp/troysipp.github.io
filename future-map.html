@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="stylesheet" type="text/css" href="./vendor/leaflet.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="container" id="title-container">
+    <div class="row" id="title-row">
+      <h1 class="col align-self-center display-1 upper-space">
+        <p class="text-center" id="title-question-text">Where do you care about?</p>
+      </h1>
+    </div>
+  </div>
+
+  <div class="container" id="questions-container">
+    <h3 col align-self-center>
+      <p class="text-center text-muted" id="selection-advice">(select from the map or dropdown list)</p>
+    </h3>
+    <div class="dropdown text-center dropdown-list" id="places-dd">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Places
+      </button>
+      <div class="dropdown-menu" id="places-list" aria-labelledby="dropdownMenuButton">
+      </div>
+    </div>
+    <div class="dropdown text-center dropdown-list hide this-will-not-be-read" id="issues-dd">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Issues
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="issues-list">
+      </div>
+    </div>
+  </div>
+
+  <div class="container text-center hide this-will-not-be-read" id="results">
+    <div class="">
+      <h3 class="text-center display-5" id="result-text"></h3>
+      <button class="btn btn-secondary" type="button" id="refreshButton" onclick="restart()">
+        Select again
+      </button>
+    </div>
+  </div>
+
+  <div id="mapid" style="height:400px;position:absolute;bottom:0%;left:0%;width: 100%;"></div>
+
+  <script type="text/javascript" src="./vendor/leaflet.js"></script>
+  <script type="text/javascript" src="./vendor/codegrid-js/src/codegrid.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script>
+    var worldGrid;
+    var grid;
+    var placeData;
+    var issueData;
+
+    var selectedPlaceCode = undefined;
+    var selectedIssueCode = undefined;
+
+    var issuesList = document.querySelector('#issues-list');
+
+    var mymap = L.map('mapid').setView([20, -0], 2);
+    loadJSON(function (response) {
+      worldGrid = JSON.parse(response);
+      setGrid();
+    }, './vendor/codegrid-js/tiles/worldgrid.json');
+
+    loadJSON(function (response) {
+      placeData = JSON.parse(response);
+      placesList = document.querySelector('#places-list');
+      for (i in placeData['places']) {
+        place = placeData['places'][i];
+        ddElem = document.createElement('li');
+        ddElem.classList = 'selectable';
+        ddElemLink = document.createElement('a');
+        ddElemText = document.createTextNode(place.name)
+        ddElemLink.addEventListener('click', e => mapFullNameToCode(e.target.innerHTML), false);
+        ddElemLink.append(ddElemText);
+        ddElem.append(ddElemLink);
+        placesList.append(ddElem)
+      }
+    }, './data/places.json')
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+      maxZoom: 18,
+      minZoom: 2,
+      id: 'mapbox.streets',
+      accessToken: 'pk.eyJ1IjoidHJveXNpcHAiLCJhIjoiY2sxOW0zb2FiMDA3NTNkbXEydXRnanV4bCJ9.pr9t9J_hWcOs1DsHoHHO_A'
+    }).addTo(mymap);
+
+    function setGrid() {
+      grid = codegrid.CodeGrid('./vendor/codegrid-js/tiles', worldGrid);
+    }
+
+    function onMapClick(e) {
+      grid.getCode(e.latlng.lat, e.latlng.lng, function (err, code) {
+        if (err) {
+          console.log(err);
+        } else {
+          if (selectedPlaceCode === undefined) {
+            selectedPlaceCode = code;
+            mapCodeToData(selectedPlaceCode);
+          }
+        }
+      });
+    }
+
+    mymap.on('click', onMapClick);
+
+    function loadJSON(callback, dataLocation) {
+      var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
+      xobj.open('GET', dataLocation, true);
+      xobj.onreadystatechange = function () {
+        if (xobj.readyState == 4 && xobj.status == "200") {
+          // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+          callback(xobj.responseText);
+        }
+      };
+      xobj.send(null);
+    }
+
+    function mapFullNameToCode(placeName) {
+      for (i in placeData['places']) {
+        if (placeName === placeData['places'][i].name) {
+          selectedPlaceCode = i;
+          mapCodeToData(selectedPlaceCode);
+        }
+      }
+    }
+
+    function mapCodeToData(placeCode) {
+      switchToWorries(placeData['places'][placeCode]);
+    }
+
+    function switchToWorries(place) {
+      if (selectedPlaceCode !== undefined) {
+        // change title question
+        document.querySelector('#title-question-text').textContent = 'What do you care about?'
+        // change selection advice
+        document.querySelector('#selection-advice').textContent = '(select from the dropdown list)'
+        // load issue data
+        loadJSON(function (response) {
+          // hide place question
+          issueData = JSON.parse(response);
+          placesDD = document.querySelector('#places-dd');
+          placesDD.className += ' hide this-will-not-be-read';
+
+          // show issue question
+          document.querySelector('#issues-dd').className = 'dropdown text-center dropdown-list';
+
+          for (i in placeData['places'][selectedPlaceCode]['issues']) {
+            issueDatum = issueData['issues'][i];
+            ddElem = document.createElement('li');
+            ddElemLink = document.createElement('a');
+            ddElemText = document.createTextNode(issueDatum.issue);
+            ddElemLink.addEventListener('click', e => setSelectedIssue(e.target.innerHTML), false);
+            ddElemLink.append(ddElemText);
+            ddElem.append(ddElemLink);
+            issuesList.append(ddElem);
+          }
+        }, './data/issues.json')
+      }
+    }
+
+    function setSelectedIssue(issueText) {
+      for (i in issueData['issues']) {
+        if (issueText === issueData['issues'][i].issue) {
+          selectedIssueCode = i;
+          generateResult()
+        }
+      }
+    }
+
+    function generateResult() {
+      if (selectedPlaceCode !== undefined && selectedIssueCode !== undefined) {
+
+        document.querySelector('#title-question-text').textContent = 'Predicted:'
+        document.querySelector('#questions-container').className += ' hide this-will-not-be-read';
+
+        resultTextContainer = document.querySelector('#result-text');
+        resultText = document.createTextNode(`${placeData['places'][selectedPlaceCode]['issues'][selectedIssueCode]['value']}`);
+        resultText.className = 'text-center align-self-center display-4';
+        titleContainer = document.querySelector('#title-container');
+        resultTextContainer.append(resultText);
+
+        document.querySelector('#results').className = 'container text-center';
+      }
+    }
+
+    function restart() {
+      if (selectedPlaceCode !== undefined && selectedIssueCode !== undefined) {
+        selectedPlaceCode = undefined;
+        selectedIssueCode = undefined;
+
+        // reset title question
+        document.querySelector('#title-question-text').textContent = 'Where do you care about?'
+        // reset selection advice
+        document.querySelector('#selection-advice').textContent = '(select from the map or dropdown list)'
+        // reset selection options
+        document.querySelector('#title-row').className = 'title row';
+        document.querySelector('#questions-container').className = 'container';
+        document.querySelector('#results').className = 'hide this-will-not-be-read';
+        document.querySelector('#issues-dd').className = 'dropdown text-center dropdown-list hide this-will-not-be-read';
+        document.querySelector('#places-dd').className = 'dropdown text-center dropdown-list';
+
+        // remove previous selection's issues
+        while (issuesList.firstChild) {
+          issuesList.removeChild(issuesList.firstChild)
+        }
+
+        // empty result div
+        document.querySelector('#result-text').removeChild(document.querySelector('#result-text').childNodes[0]);
+      }
+    }
+
+    function createDropdownList() {
+
+    }
+
+  </script>
+</body>
+
+</html>
