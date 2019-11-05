@@ -1,11 +1,12 @@
-#mapid {
+/* currently not having any effect */
+/* #mapid {
   height: 500px;
   position: absolute;
   left: 0;
   bottom: 0;
-}
+  cursor: pointer;
+} */
 
-/* not sure why this isn't having an effect */
 .upper-space {
   margin-top: 5% !important;
 }
@@ -25,5 +26,5 @@
 }
 
 .selectable {
-  cursor: pointer;
+  cursor: pointer !important;
 }

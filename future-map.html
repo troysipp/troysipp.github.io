@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <div id="mapid" style="height:400px;position:absolute;bottom:0%;left:0%;width: 100%;"></div>
+  <div id="mapid" style="height:400px;position:absolute;bottom:0%;left:0%;width: 100%;cursor: pointer;"></div>
 
   <script type="text/javascript" src="./vendor/leaflet.js"></script>
   <script type="text/javascript" src="./vendor/codegrid-js/src/codegrid.js"></script>
@@ -71,6 +71,8 @@
   <script>
     var worldGrid;
     var grid;
+    var mapMarker;
+
     var placeData;
     var issueData;
 
@@ -88,26 +90,18 @@
     loadJSON(function (response) {
       placeData = JSON.parse(response);
       placesList = document.querySelector('#places-list');
-      for (i in placeData['places']) {
-        place = placeData['places'][i];
-        ddElem = document.createElement('li');
-        ddElem.classList = 'selectable';
-        ddElemLink = document.createElement('a');
-        ddElemText = document.createTextNode(place.name)
-        ddElemLink.addEventListener('click', e => mapFullNameToCode(e.target.innerHTML), false);
-        ddElemLink.append(ddElemText);
-        ddElem.append(ddElemLink);
-        placesList.append(ddElem)
-      }
-    }, './data/places.json')
+      // create a dropdown list of the place data
+      createDropdownList(placeData['places'], placeData['places'], 'name', mapFullNameToCode, placesList);
+    }, './places.json')
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-      maxZoom: 18,
+      maxZoom: 15,
       minZoom: 2,
       id: 'mapbox.streets',
       accessToken: 'pk.eyJ1IjoidHJveXNpcHAiLCJhIjoiY2sxOW0zb2FiMDA3NTNkbXEydXRnanV4bCJ9.pr9t9J_hWcOs1DsHoHHO_A'
     }).addTo(mymap);
+    L.Icon.Default.prototype.options.shadowUrl = '';
 
     function setGrid() {
       grid = codegrid.CodeGrid('./vendor/codegrid-js/tiles', worldGrid);
@@ -119,8 +113,16 @@
           console.log(err);
         } else {
           if (selectedPlaceCode === undefined) {
-            selectedPlaceCode = code;
-            mapCodeToData(selectedPlaceCode);
+            // check to see whether the place code has been populated with data yet
+            if (Object.keys(placeData.places).indexOf(code) > -1) {
+              mapMarker = new L.marker(e.latlng).addTo(mymap);
+              selectedPlaceCode = code;
+              mapCodeToData(selectedPlaceCode);
+            } else if (code === "None") {
+              alert('Apologies, we do not have data associated with your choice. Please try another location.')
+            } else {
+              alert('Apologies, this data has not been populated. Please check back soon or try another location.')
+            }
           }
         }
       });
@@ -170,17 +172,9 @@
           // show issue question
           document.querySelector('#issues-dd').className = 'dropdown text-center dropdown-list';
 
-          for (i in placeData['places'][selectedPlaceCode]['issues']) {
-            issueDatum = issueData['issues'][i];
-            ddElem = document.createElement('li');
-            ddElemLink = document.createElement('a');
-            ddElemText = document.createTextNode(issueDatum.issue);
-            ddElemLink.addEventListener('click', e => setSelectedIssue(e.target.innerHTML), false);
-            ddElemLink.append(ddElemText);
-            ddElem.append(ddElemLink);
-            issuesList.append(ddElem);
-          }
-        }, './data/issues.json')
+          // create a dropdown list with the issue data
+          createDropdownList(placeData['places'][selectedPlaceCode]['issues'], issueData['issues'], 'issue', setSelectedIssue, issuesList)
+        }, './issues.json')
       }
     }
 
@@ -211,6 +205,10 @@
 
     function restart() {
       if (selectedPlaceCode !== undefined && selectedIssueCode !== undefined) {
+        // remove map pin
+        mymap.removeLayer(mapMarker)
+
+        // reset place and issue selections
         selectedPlaceCode = undefined;
         selectedIssueCode = undefined;
 
@@ -235,8 +233,25 @@
       }
     }
 
-    function createDropdownList() {
-
+    function createDropdownList(loopSpot, dataSpot, objKey, clickFcn, destination) {
+      // loop through list items
+      for (i in loopSpot) {
+        // find each corresponding datum
+        datum = dataSpot[i];
+        // create appropriate html
+        ddElem = document.createElement('li');
+        ddElem.classList = 'selectable m-1 btn-small btn-light';
+        ddElem.setAttribute('role', 'button');
+        ddElemLink = document.createElement('a');
+        ddElemText = document.createTextNode(datum[objKey])
+        // add appropriate function on item click
+        ddElemLink.addEventListener('click', e => clickFcn(e.target.innerHTML), false);
+        ddElemLink.classList = 'p-2';
+        ddElemLink.append(ddElemText);
+        ddElem.append(ddElemLink);
+        // put the link in the right place
+        destination.append(ddElem);
+      }
     }
 
   </script>
