@@ -147,6 +147,7 @@
       for (i in placeData['places']) {
         if (placeName === placeData['places'][i].name) {
           selectedPlaceCode = i;
+          mapMarker = new L.marker(placeData['places'][i].latlng).addTo(mymap);
           mapCodeToData(selectedPlaceCode);
         }
       }
@@ -205,7 +206,7 @@
 
     function restart() {
       if (selectedPlaceCode !== undefined && selectedIssueCode !== undefined) {
-        // remove map pin (if present)
+        // remove map pin
         if (mapMarker !== undefined) {
           mymap.removeLayer(mapMarker)
         }

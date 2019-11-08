@@ -3,6 +3,10 @@
     "us": {
       "name": "United States of America",
       "code": "us",
+      "latlng": {
+        "lat": 38.900497,
+        "lng": -77.007507
+      },
       "issues": {
         "elbow-room": {
           "value": "In 1995, the United States of America had 28 people/km^2.\r\n  In 2018, that number was 36 people/km^2 and is projected to be 35 people/km^2 in 2025.",
@@ -47,6 +51,10 @@
     "ca": {
       "name": "Canada",
       "code": "ca",
+      "latlng": {
+        "lat": 45.424721,
+        "lng": -75.695000
+      },
       "issues": {
         "elbow-room": {
           "value": "In 1995, Canada had 3 people/km^2.\r\n  In 2018, that number was 4 people/km^2 and is projected to be 4 people/km^2 in 2025.",
@@ -90,6 +98,10 @@
     "mx": {
       "name": "Mexico",
       "code": "mx",
+      "latlng": {
+        "lat": 19.451054,
+        "lng": -99.125519
+      },
       "issues": {
         "colorful-ocean": {
           "value": "Ocean warming, pollution, and physical disturbance will increase coral bleaching",
