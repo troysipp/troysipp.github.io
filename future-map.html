@@ -205,8 +205,10 @@
 
     function restart() {
       if (selectedPlaceCode !== undefined && selectedIssueCode !== undefined) {
-        // remove map pin
-        mymap.removeLayer(mapMarker)
+        // remove map pin (if present)
+        if (mapMarker !== undefined) {
+          mymap.removeLayer(mapMarker)
+        }
 
         // reset place and issue selections
         selectedPlaceCode = undefined;
