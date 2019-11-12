@@ -45,6 +45,31 @@
           "source": "Gillett, N.P., A.J. Weaver, F.W. Zwiers, and M.D. Flannigan, 24: Detecting the effect of climate change on Canadian forest fires. Geophysical Research Letters, 31(18), L18211, doi:1.129/24GL2876.",
           "url": "http://doi.org/1.129/24GL2876",
           "climate": "Minor"
+        },
+        "polar-bear": {
+          "value": "Decreasing Arctic sea ice cover in summer",
+          "confidence": "Very High",
+          "source": "ACIA, 25: Arctic Climate Impact Assessment. Cambridge University Press, New York, NY, USA, 142 pp. (ISBN: 97852186598)",
+          "url": "http://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/climatology-and-climate-change/arctic-climate-impact-assessment-scientific-report",
+          "climate": "Major"
+        },
+        "permafrost": {
+          "value": "Warming will cause widespread permafrost degradation, especially in the southern Arctic",
+          "effect": {
+            "value": "Damaging buildings and infrastructure by making ground less stable, releasing inert carbon into the atmosphere and increasing greenhouse effect",
+            "effect-src": "https://www.theguardian.com/environment/2012/mar/05/permafrost-climate-carbon-emissions"
+          },
+          "confidence": "High",
+          "source": "AMAP, 211: Snow,Water, Ice and Permafrost in the Arctic (SWIPA): Climate Change and the Cryosphere. Arctic Monitoring and Assessment Programme (AMAP), Oslo, Norway, 538 pp.",
+          "url": "http://www.amap.no/documents/doc/snow-water-ice-and-permafrost-in-the-arctic-swipa-climate-change-and-the-cryosphere/743",
+          "climate": "Major"
+        },
+        "arctic-wildlife": {
+          "value": "Atmospheric and ocean warming as well as changes in circulation and sea ice will have negative effects on non-migratory Arctic species",
+          "confidence": "High",
+          "source": "Amstrup, S.C., E.T. DeWeaver, D.C. Douglas, B.G. Marcot, G.M. Durner, C.M. Bitz, and D.A. Bailey, 21: Greenhouse gas mitigation can reduce sea-ice loss and increase polar bear persistence. Nature, 468(7326), 955-958.",
+          "url": "http://doi.org/1.138/nature9653",
+          "climate": "Major"
         }
       }
     },
@@ -92,6 +117,31 @@
           "source": "Gillett, N.P., A.J. Weaver, F.W. Zwiers, and M.D. Flannigan, 24: Detecting the effect of climate change on Canadian forest fires. Geophysical Research Letters, 31(18), L18211, doi:1.129/24GL2876.",
           "url": "http://doi.org/1.129/24GL2876",
           "climate": "Minor"
+        },
+        "polar-bear": {
+          "value": "Decreasing Arctic sea ice cover in summer",
+          "confidence": "Very High",
+          "source": "ACIA, 25: Arctic Climate Impact Assessment. Cambridge University Press, New York, NY, USA, 142 pp. (ISBN: 97852186598)",
+          "url": "http://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/climatology-and-climate-change/arctic-climate-impact-assessment-scientific-report",
+          "climate": "Major"
+        },
+        "permafrost": {
+          "value": "Warming will cause widespread permafrost degradation, especially in the southern Arctic",
+          "effect": {
+            "value": "Damaging buildings and infrastructure by making ground less stable, releasing inert carbon into the atmosphere and increasing greenhouse effect",
+            "effect-src": "https://www.theguardian.com/environment/2012/mar/05/permafrost-climate-carbon-emissions"
+          },
+          "confidence": "High",
+          "source": "AMAP, 211: Snow,Water, Ice and Permafrost in the Arctic (SWIPA): Climate Change and the Cryosphere. Arctic Monitoring and Assessment Programme (AMAP), Oslo, Norway, 538 pp.",
+          "url": "http://www.amap.no/documents/doc/snow-water-ice-and-permafrost-in-the-arctic-swipa-climate-change-and-the-cryosphere/743",
+          "climate": "Major"
+        },
+        "arctic-wildlife": {
+          "value": "Atmospheric and ocean warming as well as changes in circulation and sea ice will have negative effects on non-migratory Arctic species",
+          "confidence": "High",
+          "source": "Amstrup, S.C., E.T. DeWeaver, D.C. Douglas, B.G. Marcot, G.M. Durner, C.M. Bitz, and D.A. Bailey, 21: Greenhouse gas mitigation can reduce sea-ice loss and increase polar bear persistence. Nature, 468(7326), 955-958.",
+          "url": "http://doi.org/1.138/nature9653",
+          "climate": "Major"
         }
       }
     },
@@ -108,6 +158,185 @@
           "confidence": "High",
           "source": "Guzman, H.M., S. Benfield, O. Breedy, and J.M. Mair, 28: Broadening reef protection across the Marine Conservation Corridor of the Eastern Tropical Pacific: distribution and diversity of reefs in Las Perlas Archipelago, Panama. Environmental Conservation, 35(1), 46-54.",
           "url": "http://doi.org/1.117/S376892984542",
+          "climate": "Major"
+        }
+      }
+    },
+    "pe": {
+      "name": "Peru",
+      "code": "pe",
+      "latlng": {
+        "lat": -12.046374,
+        "lng": -77.042793
+      },
+      "issues": {
+        "andean-glaciers": {
+          "value": "Warming will shrink the glaciers",
+          "confidence": "High",
+          "source": "Vuille, M., B. Francou, P. Wagnon, I. Juen, G. Kaser, B.G. Mark, and R.S. Bradley, 28: Climate change and tropical Andean glaciers: past, present and future. Earth Science Reviews, 89(3-4), 79-96.",
+          "url": "http://doi.org/1.116/j.earscirev.28.4.2",
+          "climate": "Major"
+        }
+      }
+    },
+    "cl": {
+      "name": "Chile",
+      "code": "cl",
+      "latlng": {
+        "lat": -33.447487,
+        "lng": -70.673676
+      },
+      "issues": {
+        "andean-glaciers": {
+          "value": "Warming will shrink the glaciers",
+          "confidence": "High",
+          "source": "Vuille, M., B. Francou, P. Wagnon, I. Juen, G. Kaser, B.G. Mark, and R.S. Bradley, 28: Climate change and tropical Andean glaciers: past, present and future. Earth Science Reviews, 89(3-4), 79-96.",
+          "url": "http://doi.org/1.116/j.earscirev.28.4.2",
+          "climate": "Major"
+        }
+      }
+    },
+    "ru": {
+      "name": "Russia",
+      "code": "ru",
+      "latlng": {
+        "lat": 55.751244,
+        "lng": 37.618423
+      },
+      "issues": {
+        "polar-bear": {
+          "value": "Warming will decreasing Arctic sea ice cover in summer",
+          "confidence": "Very High",
+          "source": "ACIA, 25: Arctic Climate Impact Assessment. Cambridge University Press, New York, NY, USA, 142 pp. (ISBN: 97852186598)",
+          "url": "http://www.cambridge.org/us/academic/subjects/earth-and-environmental-science/climatology-and-climate-change/arctic-climate-impact-assessment-scientific-report",
+          "climate": "Major"
+        },
+        "permafrost": {
+          "value": "Warming will cause widespread permafrost degradation, especially in the southern Arctic",
+          "effect": {
+            "value": "Damaging buildings and infrastructure by making ground less stable, releasing inert carbon into the atmosphere and increasing greenhouse effect",
+            "effect-src": "https://www.theguardian.com/environment/2012/mar/05/permafrost-climate-carbon-emissions"
+          },
+          "confidence": "High",
+          "source": "AMAP, 211: Snow,Water, Ice and Permafrost in the Arctic (SWIPA): Climate Change and the Cryosphere. Arctic Monitoring and Assessment Programme (AMAP), Oslo, Norway, 538 pp.",
+          "url": "http://www.amap.no/documents/doc/snow-water-ice-and-permafrost-in-the-arctic-swipa-climate-change-and-the-cryosphere/743",
+          "climate": "Major"
+        },
+        "arctic-wildlife": {
+          "value": "Atmospheric and ocean warming as well as changes in circulation and sea ice will have negative effects on non-migratory Arctic species",
+          "confidence": "High",
+          "source": "Amstrup, S.C., E.T. DeWeaver, D.C. Douglas, B.G. Marcot, G.M. Durner, C.M. Bitz, and D.A. Bailey, 21: Greenhouse gas mitigation can reduce sea-ice loss and increase polar bear persistence. Nature, 468(7326), 955-958.",
+          "url": "http://doi.org/1.138/nature9653",
+          "climate": "Major"
+        }
+      }
+    },
+    "gl": {
+      "name": "Greenland",
+      "code": "gl",
+      "latlng": {
+        "lat": 64.1834700,
+        "lng": -51.7215700
+      },
+      "issues": {
+        "permafrost": {
+          "value": "Warming will cause widespread permafrost degradation, especially in the southern Arctic",
+          "effect": {
+            "value": "Damaging buildings and infrastructure by making ground less stable, releasing inert carbon into the atmosphere and increasing greenhouse effect",
+            "effect-src": "https://www.theguardian.com/environment/2012/mar/05/permafrost-climate-carbon-emissions"
+          },
+          "confidence": "High",
+          "source": "AMAP, 211: Snow,Water, Ice and Permafrost in the Arctic (SWIPA): Climate Change and the Cryosphere. Arctic Monitoring and Assessment Programme (AMAP), Oslo, Norway, 538 pp.",
+          "url": "http://www.amap.no/documents/doc/snow-water-ice-and-permafrost-in-the-arctic-swipa-climate-change-and-the-cryosphere/743",
+          "climate": "Major"
+        }
+      },
+      "arctic-wildlife": {
+        "value": "Atmospheric and ocean warming as well as changes in circulation and sea ice will have negative effects on non-migratory Arctic species",
+        "confidence": "High",
+        "source": "Amstrup, S.C., E.T. DeWeaver, D.C. Douglas, B.G. Marcot, G.M. Durner, C.M. Bitz, and D.A. Bailey, 21: Greenhouse gas mitigation can reduce sea-ice loss and increase polar bear persistence. Nature, 468(7326), 955-958.",
+        "url": "http://doi.org/1.138/nature9653",
+        "climate": "Major"
+      }
+    },
+    "ke": {
+      "name": "Kenya",
+      "code": "ke",
+      "latlng": {
+        "lat": -1.286389,
+        "lng": 36.817223
+      },
+      "issues": {
+        "afr-coral-reefs": {
+          "value": "Ocean warming and human impacts will cause a decline in tropical coral reefs",
+          "confidence": "High",
+          "source": "Baker, A.C., P.W. Glynn, and B. Riegl, 28: Climate change and coral reef bleaching: an ecological assessment of long-term impacts, recovery trends and future outlook. Estuarine, Coastal and Shelf Science, 8(4), 435-471.",
+          "url": "http://doi.org/1.116/j.ecss.28.9.3",
+          "climate": "Major"
+        }
+      }
+    },
+    "tz": {
+      "name": "Tanzania",
+      "code": "tz",
+      "latlng": {
+        "lat": -6.161184,
+        "lng": 35.745426
+      },
+      "issues": {
+        "afr-coral-reefs": {
+          "value": "Ocean warming and human impacts will cause a decline in tropical coral reefs",
+          "confidence": "High",
+          "source": "Baker, A.C., P.W. Glynn, and B. Riegl, 28: Climate change and coral reef bleaching: an ecological assessment of long-term impacts, recovery trends and future outlook. Estuarine, Coastal and Shelf Science, 8(4), 435-471.",
+          "url": "http://doi.org/1.116/j.ecss.28.9.3",
+          "climate": "Major"
+        }
+      }
+    },
+    "mz": {
+      "name": "Mozambique",
+      "latlng": {
+        "lat": -25.953724,
+        "lng": 32.588711
+      },
+      "issues": {
+        "afr-coral-reefs": {
+          "value": "Ocean warming and human impacts will cause a decline in tropical coral reefs",
+          "confidence": "High",
+          "source": "Baker, A.C., P.W. Glynn, and B. Riegl, 28: Climate change and coral reef bleaching: an ecological assessment of long-term impacts, recovery trends and future outlook. Estuarine, Coastal and Shelf Science, 8(4), 435-471.",
+          "url": "http://doi.org/1.116/j.ecss.28.9.3",
+          "climate": "Major"
+        }
+      }
+    },
+    "mg": {
+      "name": "Madagascar",
+      "latlng": {
+        "lat": -18.8791902,
+        "lng": 47.50790549999999
+      },
+      "issues": {
+        "afr-coral-reefs": {
+          "value": "Ocean warming and human impacts will cause a decline in tropical coral reefs",
+          "confidence": "High",
+          "source": "Baker, A.C., P.W. Glynn, and B. Riegl, 28: Climate change and coral reef bleaching: an ecological assessment of long-term impacts, recovery trends and future outlook. Estuarine, Coastal and Shelf Science, 8(4), 435-471.",
+          "url": "http://doi.org/1.116/j.ecss.28.9.3",
+          "climate": "Major"
+        }
+      }
+    },
+    "za": {
+      "name": "South Africa",
+      "latlng": {
+        "lat": -25.731340,
+        "lng": 28.218370
+      },
+      "issues": {
+        "afr-coral-reefs": {
+          "value": "Ocean warming and human impacts will cause a decline in tropical coral reefs",
+          "confidence": "High",
+          "source": "Baker, A.C., P.W. Glynn, and B. Riegl, 28: Climate change and coral reef bleaching: an ecological assessment of long-term impacts, recovery trends and future outlook. Estuarine, Coastal and Shelf Science, 8(4), 435-471.",
+          "url": "http://doi.org/1.116/j.ecss.28.9.3",
           "climate": "Major"
         }
       }

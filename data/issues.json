@@ -7,7 +7,7 @@
       "issue": "Indigeous People"
     },
     "tree-line": {
-      "issue": "Views from mountaintops"
+      "issue": "Views from island mountaintops"
     },
     "salmon": {
       "issue": "Eating tasty salmon"
@@ -23,6 +23,21 @@
     },
     "colorful-ocean": {
       "issue": "The view underwater"
+    },
+    "andean-glaciers": {
+      "issue": "Big, cold places"
+    },
+    "polar-bear": {
+      "issue": "Polar bear habitat"
+    },
+    "permafrost": {
+      "issue": "Keeping cold ground cold"
+    },
+    "arctic-wildlife": {
+      "issue": "Artic wildlife"
+    },
+    "afr-coral-reefs": {
+      "issue": "Fishing for food and income"
     }
   }
 }
